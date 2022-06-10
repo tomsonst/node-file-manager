@@ -5,6 +5,9 @@ import { stdin as input, stdout as output } from 'node:process';
 import { upNavigation, cdNavigation, printContentFolder } from './navigation/navigation.js';
 import { readFile, createNewFile, renameFile, copyFile, moveFile, deleteFile } from './fileOperations/fileOperations.js';
 import { printCurrentDirectory } from './utils.js';
+import { getOsInformation } from './systemOperations/systemOperations.js';
+import { calculateHash } from './hashOperation/hashCalculate.js';
+import { compressFile, decompressFile } from './compressOperations/compress.js';
 
 
 const userName = process.argv[2].split('=')[1];
@@ -50,6 +53,18 @@ rl.on('line', (data) => {
       break;
     case '.exit':
       rl.close();
+      break;
+    case 'os':
+      getOsInformation(data);
+      break;
+    case 'hash':
+      calculateHash(data);
+      break;
+    case 'compress':
+      compressFile(data);
+      break;
+    case 'decompress':
+      decompressFile(data);
       break;
     default:
       console.log('Invalid input');

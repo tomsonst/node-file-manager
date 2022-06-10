@@ -18,7 +18,7 @@ export const readFile = async (data) => {
       console.log('\n');
       printCurrentDirectory();
     })
-  } catch(err) {
+  } catch {
     console.log('Operation failed');
   }
 }
@@ -32,7 +32,7 @@ export const createNewFile = (data) => {
 
     fs.appendFile(newFileName, '', () => {});
     printCurrentDirectory();
-  } catch (err) {
+  } catch {
     console.log('Operation failed');
   }
 }
@@ -48,8 +48,8 @@ export const renameFile = (data) => {
 
     fs.rename(currentFileName, newFileName, () => {});
     printCurrentDirectory();
-  } catch(err) {
-    console.log('Operation failed', err);
+  } catch {
+    console.log('Operation failed');
   }
 }
 
