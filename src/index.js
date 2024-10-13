@@ -71,5 +71,5 @@ rl.on('line', (data) => {
   }
 });
 
-rl.on('close', () => { console.log(`Thank you for using File Manager, ${userName}!`)})
+rl.on('close', () => { console.log(`Thank you for using File Manager, ${userName}, goodbye!`)})
 
